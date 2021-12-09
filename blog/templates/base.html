@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expaand-md navbar-dark bg-stel fixed-top">
+            <div class="container">
+                <a href="{% url 'blog-home' %}">Django Blog</a>
+                <button class="navbar-toggler" type="button" data-togle="#navbarRoggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="toggle">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collpase navbar-collapse" id="navbarToggle" >
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+                        <a class="nav-item nav-link" href="{% 'blog-about' %}" ></a>
+                    </div>
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link">Home</a>
+                        <a class="nav-item nav-link"></a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+
+        </div>
+            <div class="col-md-4">
+                <div class="content-section">
+                    <h3>Our Sidebar</h3>
+                    <p class="text-muted">You can put any information here you'd like.
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-light">Lastest Poste</li>
+                         <li class="list-group-item list-group-item-light">Annoucement</li>
+                         <li class="list-group-item list-group-item-light">Calendars</li>
+                        <li class="list-group-item list-group-item-light">ect</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
