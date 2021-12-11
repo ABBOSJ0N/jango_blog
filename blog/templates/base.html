@@ -1,3 +1,5 @@
+{%  load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,7 @@
         <title>Django Blog - {{ title }}</title>
     {% else %}
         <title>Django Blog</title>
-    
+    {% endif %}
 </head>
 <body>
     <header class="site-header">
@@ -26,11 +28,11 @@
                 <div class="collpase navbar-collapse" id="navbarToggle" >
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-                        <a class="nav-item nav-link" href="{% 'blog-about' %}" ></a>
+                        <a class="nav-item nav-link" href="{% url 'blog-about' %}" >About</a>
                     </div>
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link">Home</a>
-                        <a class="nav-item nav-link"></a>
+                        <a class="nav-item nav-link">About</a>
                     </div>
 
                 </div>
